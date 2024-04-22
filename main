@@ -1,0 +1,25 @@
+import random
+
+list = ["washing machine","face wash","remote", "toothpaste", "picture", "glass", "puddle", "truck", "ring","conditioner", "bottle cap", "fridge", "photo album", "eye liner","knife", "candle", "newspaper", "speakers" "credit card", "lamp" ,"key chain","plastic fork","pool stick","toothbrush","window","tissue box","clay pot","pants","clothes","blouse","button","air freshener","scotch tape","nail clippers","shovel","radio","perfume","twezzers","headphones","watch","hanger","monitor","eraser","leg warmers","grid paper","shampoo","drawer","hair brush"]
+random_word = random.choice(list)
+print (random_word)
+
+length = len(random_word)
+
+type = "word"
+
+if " " in random_word:
+    print ("There are", "spaces in this phrase")
+    type = "phrase"
+
+print ("The", type, "you are going to guess is as shown below: ")
+
+print ("_ " * length)
+
+letters = [*random_word]
+print (letters)
+
+guess = input("Guess a letter: ")
+if guess in letters:
+    print ("Well Done")
+
