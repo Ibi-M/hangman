@@ -12,14 +12,78 @@ if " " in random_word:
     print ("There are", "spaces in this phrase")
     type = "phrase"
 
+
 print ("The", type, "you are going to guess is as shown below: ")
 
-print ("_ " * length)
+print (" _ " * length)
 
+letter1 = ""
+letter2 = ""
+letter3 = ""
+letter4 = ""
+letter5 = ""
+letter6 = ""
+letter7 = ""
+letter8 = ""
+letter9 = ""
+letter10 = ""
+letter11 = ""
+letter12 = ""
+letter13 = ""
+letter14 = ""
+letter15 = ""
+letter16 = ""
+letter17 = ""
+letter18 = ""
+letter19 = ""
+letter20 = ""
+
+
+c_result = [letter1, letter2, letter3, letter4,letter5, letter6, letter7, letter8, letter9, letter10, letter11, letter12, letter13, letter14, letter15, letter16, letter17, letter18, letter19, letter20 ]
 letters = [*random_word]
 print (letters)
 
-guess = input("Guess a letter: ")
-if guess in letters:
-    print ("Well Done")
 
+
+
+stop = False
+
+check = 0
+
+
+global count
+count = 0
+
+global c_guesses
+c_guesses = 0
+
+global total_guesses
+total_guesses = 0
+
+said_letters = []
+
+def game(count):
+    global total_guesses
+    global c_guesses
+    global said_letters
+    guess = input("Guess a letter: ")
+    while guess in said_letters:
+        print ("You have already guessed that letter!")
+        guess = input ("Guess a letter: ")
+    said_letters += [guess]
+    if guess in letters:
+        print ("The letter", guess, "is in the word!")
+        c_result[count] = guess
+        
+        c_guesses = c_guesses + 1
+    total_guesses = total_guesses + 1
+
+while c_guesses < length:
+    game(count)
+    count = count + 1
+    if c_guesses == length:
+        print ("Well done, you have guessed the word of:", random_word, "in", total_guesses, "guesses")
+        print (c_result)
+
+def counter():
+    count = count + 1
