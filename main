@@ -79,11 +79,9 @@ def game(count):
     total_guesses = total_guesses + 1
 
 while c_guesses < length:
-    game(count)
     count = count + 1
+    game(count)
     if c_guesses == length:
         print ("Well done, you have guessed the word of:", random_word, "in", total_guesses, "guesses")
         print (c_result)
 
-def counter():
-    count = count + 1
